@@ -94,7 +94,7 @@ int findValidObject(){ //find an object for the purpose of tracking. Should not 
 	camera_open();
 	camera_update();
 	count = get_object_count(channel);
-	point2 obj_pos_before[count];
+	/*point2 obj_pos_before[count];  //check point2
 	point2 obj_pos_after[count];
 	for (i=0; i<count; i++){
 		obj_pos_before[i] = get_object_center(channel, i);
@@ -109,7 +109,7 @@ int findValidObject(){ //find an object for the purpose of tracking. Should not 
 		if(validTargets = 0){
 			printf("No valid targets")
 		}
-	}
+	}*/
 }
 
 int goTowardsObject(int channel){
