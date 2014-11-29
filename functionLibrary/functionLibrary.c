@@ -26,10 +26,12 @@ int testTurnSpeed(){ //account for the distance between the wheels, etc. Returns
 	int currentPosition = 0;
 	int FIRST_SPEED = 250; //speed at which for the first portion.
 	int TIMEINTERVAL = 40;
+	int SLEEPTIME = 40; //time between each cycle of turning (for easier precision)
 	printf("Please press A when the Robot has turned 90 degrees. \n");
 	while(a_button_clicked()==0){ //turn a bit past 90 degrees.
 		turnRight(FIRST_SPEED, TIMEINTERVAL);
 		currentPosition = currentPosition + (FIRST_SPEED*TIMEINTERVAL);
+		msleep(SLEEPTIME);
 	}
 	
 	printf("Moving back a bit. \n");
@@ -88,8 +90,26 @@ void turnLeft(int speed, int time){
 }
 
 int findValidObject(){ //find an object for the purpose of tracking. Should not move.
+
 	camera_open();
-	camera_update();
+	camera_update(); //updateCamera ?
+	
+	
+}
+
+int updateCamera(){
+	
+	//int cameraErrorCheck = 0;
+	//cameraErrorCheck = camera_update; //<--- camera_update returns 0 if fail, 1 if success
+	//if cameraErrorCheck == 1{
+	//	return 1;
+	//} else if cameraErrorCheck = 0
+	//	updateCamera();
+	//	return 1;
+	//else {
+	//	return 0;
+	//}
+	
 }
 
 int goTowardsObject(int channel){
